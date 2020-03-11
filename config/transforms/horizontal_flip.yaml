@@ -1,0 +1,3 @@
+transform_resize_match: True
+transform_normalize: False
+transform_random_horizontal_flip: True

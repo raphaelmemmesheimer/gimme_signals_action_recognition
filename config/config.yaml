@@ -1,0 +1,10 @@
+defaults:
+        - dataset: ARIL
+        - optimizer: sdg
+        - fp: fp16
+        - scheduler: step
+        - net: resnet
+        - transforms: minimal
+        - checkpointing: accuracy
+gpus: -1
+gradient_clip_val: 0.5

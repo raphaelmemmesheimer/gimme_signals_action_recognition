@@ -1,0 +1,4 @@
+checkpoint_monitor: "val_acc1"
+checkpoint_mode: "max"
+checkpoint_save_top_k: 2
+checkpoint_verbose: True

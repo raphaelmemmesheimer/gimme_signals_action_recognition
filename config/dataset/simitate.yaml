@@ -1,0 +1,14 @@
+'once_cycle_policy': False
+#     'batch_size': 224,
+'batch_size': 70
+'min_epochs': 70
+'max_epochs': 150
+'transform_resize': 224
+'model_name': "resnet18"
+#     'model_name': "custom",
+'pretrained': True
+'optimizer_name': 'SGD' # not used atm
+'data_dir': "simitate/simitate_80_20"
+'save_path': "logs"
+#     'model_dir': f"{data_dir}/models_lightning/",
+'model_dir': "models/iros/224_transform/"

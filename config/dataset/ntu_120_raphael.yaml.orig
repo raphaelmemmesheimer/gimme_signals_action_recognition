@@ -1,0 +1,24 @@
+'learning_rate': 0.003
+'momentum': 0.9
+'weight_decay' : 0.0
+'amp_level': "O1"
+'use_amp': False
+'gpus': -1
+'once_cycle_policy': False
+#     'batch_size': 224,
+<<<<<<< HEAD
+'batch_size': 10
+=======
+'batch_size': 70
+>>>>>>> b19707cbd65de96e81258933a8d197e6d3a0fbb0
+'min_epochs': 70
+'max_epochs': 150
+'transform_resize': 300
+'model_name': "wide_resnet50_2"
+#     'model_name': "custom",
+'pretrained': True
+'optimizer_name': 'SGD' # not used atm
+'data_dir': "ntu/ntu_120approach_id010_0.2_size_1_attention_filter_0.5_cross_subject"
+'save_path': "logs"
+#     'model_dir': f"{data_dir}/models_lightning/",
+'model_dir': "models3/transform_220"

@@ -1,0 +1,5 @@
+# from efficientnet paper
+optimizer_name: 'RMSProb' #
+learning_rate: 0.256
+momentum: 0.9
+weight_decay: 1e-5

@@ -1,0 +1,2 @@
+transform_resize_match: True
+transform_normalize: True

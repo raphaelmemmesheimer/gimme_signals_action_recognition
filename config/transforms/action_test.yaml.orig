@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+transform_resize_match: False
+=======
+#https://pytorch.org/docs/stable/torchvision/transforms.html
+transform_resize_match: True
+>>>>>>> 2af1300d57da837d32e820cb97e5c7439b8024ff
+transform_normalize: False
+transform_random_horizontal_flip: False
+transform_random_perspective: True
+transform_perspective_scale: 0.5
+transform_random_affine: True
+transform_degrees_min: -10.0
+transform_degrees_max: 10.0
+transform_translate_a: 0.2
+transform_translate_b: 0.2
+#transform_scale_a: 2
+#transform_scale_b: 4
+#RandomAffine(degrees, translate=None, scale=None, shear=None, resample=False, fillcolor=0)

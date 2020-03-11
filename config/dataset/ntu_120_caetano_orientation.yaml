@@ -1,0 +1,12 @@
+'once_cycle_policy': False
+#     'batch_size': 224,
+'batch_size': 100
+'min_epochs': 100
+'max_epochs': 150
+'transform_resize': 224
+'model_name': "wide_resnet50_2"
+'pretrained': True
+'data_dir': "ntu/ntu_120_CaetanoOrientation/cross_subject"
+'save_path': "logs"
+#     'model_dir': f"{data_dir}/models_lightning/",
+'model_dir': "models"

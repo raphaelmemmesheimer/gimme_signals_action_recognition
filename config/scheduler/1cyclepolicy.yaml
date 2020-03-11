@@ -1,0 +1,4 @@
+lr_scheduler: "one_cycle"
+#num_steps: 30
+#lr_range_low: 0.001
+max_lr: 0.1
