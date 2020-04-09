@@ -10,7 +10,14 @@ This repository contains the action recognition approach as presented in the Gim
 
 ## Generate Representation
 
-TODO
+
+### Precalculated representations
+
+We provide precalculated representations for intermediate result reproduction:
+
+* [Simitate (MoCap)](https://agas.uni-koblenz.de/gimme_signals/precal_representation_simitate.zip)
+* [UTD-MHAD (Inertial and Skeleton)](https://agas.uni-koblenz.de/gimme_signals/precal_representation_utdmhad.zip)
+* [ARIL (Wi-Fi)](https://agas.uni-koblenz.de/gimme_signals/precal_representation_aril.zip)
 
 ## Train
 
