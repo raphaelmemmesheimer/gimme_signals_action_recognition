@@ -10,6 +10,7 @@ This repository contains the action recognition approach as presented in the Gim
 
 ## Generate Representation
 
+Representations must be placed inside a `$DATASET_FOLDER` that an environment variable points to.
 
 ### Precalculated representations
 
