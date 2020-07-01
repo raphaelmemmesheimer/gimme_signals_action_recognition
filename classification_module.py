@@ -195,10 +195,10 @@ class ClassificationLightningModule(pl.LightningModule):
         common_transforms = []
         train_transforms = []
         test_transforms = []
-        if self.hparams.transform_resize_match:
-            common_transforms.append(transforms.Resize((self.hparams.transform_resize,self.hparams.transform_resize)))
-        else:
-            common_transforms.append(transforms.Resize(self.hparams.transform_resize))
+        #if self.hparams.transform_resize_match:
+        common_transforms.append(transforms.Resize((self.hparams.transform_resize,self.hparams.transform_resize)))
+        #else:
+            #common_transforms.append(transforms.Resize(self.hparams.transform_resize))
 
 
 
