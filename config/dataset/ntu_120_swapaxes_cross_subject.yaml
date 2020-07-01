@@ -1,0 +1,18 @@
+'learning_rate': 0.05
+'momentum': 0.3
+'weight_decay' : 0.0
+'once_cycle_policy': False
+'batch_size': 40
+#     'batch_size': 224,
+'min_epochs': 70
+'max_epochs': 120
+'transform_resize': 300
+'model_name': "wide_resnet50_2"
+#     'model_name': "custom",
+'pretrained': True
+'optimizer_name': 'SGD' # not used atm
+#'data_dir': "ntu/ntu_120approach_id010_0.2_size_1_attention_filter_0.5_cross_setup"
+'data_dir': "ntu/ntu_swap_axes_testswapaxes/cross_subject"
+'save_path': "logs"
+#     'model_dir': f"{data_dir}/models_lightning/",
+'model_dir': "models_high/efficient/augment_translate/transform_300"
