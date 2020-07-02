@@ -250,7 +250,8 @@ class ClassificationLightningModule(pl.LightningModule):
         
         self.classes = testset.classes
         train_percentage = 0.8
-        trainset, valset = torch.utils.data.random_split(trainset, [train_percentage*len(trainset), (1.0-train_percentage)*len(trainset)])
+        train_items = int(train_percentage*len(trainset))
+        trainset, valset = torch.utils.data.random_split(trainset, [train_items, len(trainset)-train_items])
         
         trainloader = torch.utils.data.DataLoader(trainset, 
                                                   shuffle=True, 
