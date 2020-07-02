@@ -156,7 +156,7 @@ class ClassificationLightningModule(pl.LightningModule):
 #       scheduler_warmup = GradualWarmupScheduler(self.optimizer, multiplier=8, total_epoch=10, 
 #                                                 after_scheduler=scheduler_cosine)
 
-        self.trainloader, self.testloader = self.init_dataloaders()
+        self.trainloader, self.valloader, self.testloader = self.init_dataloaders()
         self.classes = self.testloader.dataset.classes
         print(f"Classes: {self.classes},\n Number of classes: {len(self.classes)}")
         self.val_confusion_matrix = torch.zeros([len(self.classes), 
@@ -249,16 +249,24 @@ class ClassificationLightningModule(pl.LightningModule):
         print("Trainset: ",len(trainset), "Testset: ",len(testset))
         
         self.classes = testset.classes
+        train_percentage = 0.8
+        trainset, valset = torch.utils.data.random_split(trainset, [train_percentage*len(trainset), (1.0-train_percentage)*len(trainset)])
         
         trainloader = torch.utils.data.DataLoader(trainset, 
                                                   shuffle=True, 
                                                   batch_size=self.batch_size,
                                                   num_workers=4)
+
+        valloader = torch.utils.data.DataLoader(valset, 
+                                                shuffle=False, 
+                                                batch_size=self.batch_size,
+                                                num_workers=4)
+
         testloader = torch.utils.data.DataLoader(testset, 
                                                  batch_size=self.batch_size, 
                                                  num_workers=4)
         
-        return trainloader, testloader
+        return trainloader, valloader, testloader
 
     def lr_find(self, device="cuda"):
         """
@@ -510,7 +518,7 @@ class ClassificationLightningModule(pl.LightningModule):
 
     @pl.data_loader
     def val_dataloader(self):
-        return self.testloader
+        return self.valloader
     
     @pl.data_loader
     def test_dataloader(self):
