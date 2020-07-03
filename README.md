@@ -4,8 +4,8 @@ This repository contains the action recognition approach as presented in the Gim
 
 ![Gimme Signals Overview](images/gimme_signals_overview.png)
 
-* A preprint can be found on [arxiv](https://arxiv.org/abs/1905.06002).
-* A short overview video is available on [youtube](https://www.youtube.com/watch?v=EHRgX0_G-j4)
+* A preprint can be found on [arxiv](https://arxiv.org/abs/2003.06156).
+* A short overview video is available on [youtube](https://www.youtube.com/watch?v=EHRgX0_G-j4).
 
 <!--<section id="video" class="bg-light">-->
 ## Video
@@ -16,6 +16,18 @@ This repository contains the action recognition approach as presented in the Gim
 [![Watch the video](https://img.youtube.com/vi/EHRgX0_G-j4/maxresdefault.jpg)](https://www.youtube.com/watch?v=EHRgX0_G-j4)
 
 In case the video does not play you can download it [here](https://userpages.uni-koblenz.de/~raphael/videos/gimme_signals.mp4)
+
+## Citation
+
+
+```
+@article{memmesheimer2020gimme,
+  title={Gimme Signals: Discriminative signal encoding for multimodal activity recognition},
+  author={Memmesheimer, Raphael and Theisen, Nick and Paulus, Dietrich},
+  journal={arXiv preprint arXiv:2003.06156},
+  year={2020}
+}
+```
 
 ## Requirements
 
