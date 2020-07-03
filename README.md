@@ -17,6 +17,19 @@ This repository contains the action recognition approach as presented in the Gim
 
 In case the video does not play you can download it [here](https://userpages.uni-koblenz.de/~raphael/videos/gimme_signals.mp4)
 
+## Citation
+
+`Memmesheimer, Raphael, Nick Theisen, and Dietrich Paulus. "Gimme Signals: Discriminative signal encoding for multimodal activity recognition." arXiv preprint arXiv:2003.06156 (2020).`
+
+```
+@article{memmesheimer2020gimme,
+  title={Gimme Signals: Discriminative signal encoding for multimodal activity recognition},
+  author={Memmesheimer, Raphael and Theisen, Nick and Paulus, Dietrich},
+  journal={arXiv preprint arXiv:2003.06156},
+  year={2020}
+}
+```
+
 ## Requirements
 
 * pytorch, torchvision, pytorch-lightning, hydra-core
