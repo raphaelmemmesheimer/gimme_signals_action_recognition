@@ -1,2 +1,2 @@
-check_point_criterion: "val_loss"
+check_point_criterion: "loss/val_loss"
 check_point_mode: "min"
