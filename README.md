@@ -51,7 +51,9 @@ We provide precalculated representations for intermediate result reproduction:
 
 Example:
 
-`train.py dataset=simitate model_name=efficientnet learning_rate=0.1 net="efficientnet"`
+### Simitate
+
+`python train.py dataset=simitate model_name=efficientnet learning_rate=0.1 net="efficientnet"`
 
 Exemplary, this command trains using the simitate dataset.
 
