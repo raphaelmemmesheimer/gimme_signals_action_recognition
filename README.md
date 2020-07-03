@@ -19,7 +19,6 @@ In case the video does not play you can download it [here](https://userpages.uni
 
 ## Citation
 
-`Memmesheimer, Raphael, Nick Theisen, and Dietrich Paulus. "Gimme Signals: Discriminative signal encoding for multimodal activity recognition." arXiv preprint arXiv:2003.06156 (2020).`
 
 ```
 @article{memmesheimer2020gimme,
