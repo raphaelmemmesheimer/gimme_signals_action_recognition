@@ -2,11 +2,25 @@
 
 This repository contains the action recognition approach as presented in the Gimme Signals paper.
 
-## Prequisites
+![Gimme Signals Overview](images/gimme_signals_overview.png)
 
-* Pytorch Lightning
-* Pytorch
-* Hydra
+* A preprint can be found on [arxiv](https://arxiv.org/abs/1905.06002).
+* A short overview video is available on [youtube](https://www.youtube.com/watch?v=EHRgX0_G-j4)
+
+<!--<section id="video" class="bg-light">-->
+## Video
+<video width=100% controls>
+<source src="video/gimme_signals.mp4">
+</video>
+
+[![Watch the video](https://img.youtube.com/vi/EHRgX0_G-j4/maxresdefault.jpg)](https://www.youtube.com/watch?v=EHRgX0_G-j4)
+
+In case the video does not play you can download it [here](https://userpages.uni-koblenz.de/~raphael/videos/gimme_signals.mp4)
+
+## Requirements
+
+* pytorch, torchvision, pytorch-lightning, hydra-core
+* `pip intall -r requirements.txt`
 
 ## Generate Representation
 
