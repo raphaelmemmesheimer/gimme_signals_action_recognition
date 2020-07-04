@@ -28,7 +28,7 @@ def train_app(cfg):
 
     trainer = pl.Trainer(min_epochs=hparams.min_epochs,
                  max_epochs=hparams.max_epochs,
-                 default_save_path=hparams.save_path,
+                 default_root_dir=hparams.save_path,
                  amp_level=hparams.amp_level, use_amp=hparams.use_amp,
                  gpus=hparams.gpus,
                  gradient_clip_val=hparams.gradient_clip_val,
