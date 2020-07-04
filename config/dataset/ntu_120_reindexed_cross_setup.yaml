@@ -1,0 +1,14 @@
+'learning_rate': 0.05
+'momentum': 0.3
+'weight_decay' : 0.0
+'once_cycle_policy': False
+'batch_size': 40
+'min_epochs': 70
+'max_epochs': 120
+'transform_resize': 300
+'model_name': "wide_resnet50_2"
+'pretrained': True
+'optimizer_name': 'SGD' # not used atm
+'data_dir': "ntu/ntu_reindexing_testreindexing/cross_setup"
+'save_path': "logs"
+'model_dir': "models_high/efficient/augment_translate/transform_300"
