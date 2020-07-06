@@ -13,6 +13,7 @@ This repository contains the action recognition approach as presented in the Gim
 <source src="video/gimme_signals.mp4">
 </video>
 
+### TODO Upload and update video on youtube
 [![Watch the video](https://img.youtube.com/vi/EHRgX0_G-j4/maxresdefault.jpg)](https://www.youtube.com/watch?v=EHRgX0_G-j4)
 
 In case the video does not play you can download it [here](https://userpages.uni-koblenz.de/~raphael/videos/gimme_signals.mp4)
