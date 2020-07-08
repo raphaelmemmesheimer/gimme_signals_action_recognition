@@ -37,6 +37,8 @@ In case the video does not play you can download it [here](https://userpages.uni
 
 ## Generate Representation
 
+### TODO: add code for representation generation
+
 Representations must be placed inside a `$DATASET_FOLDER` that an environment variable points to.
 
 ### Precalculated representations
