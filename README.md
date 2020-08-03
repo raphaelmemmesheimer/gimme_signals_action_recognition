@@ -5,7 +5,7 @@ This repository contains the action recognition approach as presented in the Gim
 ![Gimme Signals Overview](images/gimme_signals_overview.png)
 
 * A preprint can be found on [arxiv](https://arxiv.org/abs/2003.06156).
-* A short overview video is available on [youtube](https://www.youtube.com/watch?v=EHRgX0_G-j4).
+* A short overview video is available on [youtube](https://youtu.be/oDAtim_nJEg).
 
 <!--<section id="video" class="bg-light">-->
 ## Video
@@ -15,7 +15,8 @@ This repository contains the action recognition approach as presented in the Gim
 
 ### TODO Upload and update video on youtube
 
-[![Gimme Signals Video](images/gimme_signals_video_preview.png)](https://userpages.uni-koblenz.de/~raphael/videos/gimme_signals.mp4)
+<!--[![Gimme Signals Video](images/gimme_signals_video_preview.png)](https://userpages.uni-koblenz.de/~raphael/videos/gimme_signals.mp4)-->
+[![Gimme Signal Video](https://img.youtube.com/vi/oDAtim_nJEg/maxresdefault.jpg)](https://youtu.be/oDAtim_nJEg)
 
 In case the video does not play you can download it [here](https://userpages.uni-koblenz.de/~raphael/videos/gimme_signals.mp4)
 
