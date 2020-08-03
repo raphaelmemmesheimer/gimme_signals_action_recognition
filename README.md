@@ -16,7 +16,7 @@ This repository contains the action recognition approach as presented in the Gim
 ### TODO Upload and update video on youtube
 
 <!--[![Gimme Signals Video](images/gimme_signals_video_preview.png)](https://userpages.uni-koblenz.de/~raphael/videos/gimme_signals.mp4)-->
-[![Gimme Signal Video](https://img.youtube.com/vi/oDAtim_nJEg/maxresdefault.jpg)](https://youtu.be/oDAtim_nJEg)
+[![Gimme Signal Video](images/gimme_signals_video_preview.png)](https://youtu.be/oDAtim_nJEg)
 
 In case the video does not play you can download it [here](https://userpages.uni-koblenz.de/~raphael/videos/gimme_signals.mp4)
 
