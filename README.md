@@ -5,7 +5,7 @@ This repository contains the action recognition approach as presented in the Gim
 ![Gimme Signals Overview](images/gimme_signals_overview.png)
 
 * A preprint can be found on [arxiv](https://arxiv.org/abs/2003.06156).
-* A short overview video is available on [youtube](https://youtu.be/oDAtim_nJEg).
+* A video abstract is available on [youtube](https://youtu.be/oDAtim_nJEg).
 
 <!--<section id="video" class="bg-light">-->
 ## Video
