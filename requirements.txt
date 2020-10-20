@@ -3,3 +3,5 @@ torchvision==0.6.1
 hydra-core==0.11.3
 pytorch-lightning==0.8.4
 torch_lr_finder
+efficientnet_pytorch
+seaborn
