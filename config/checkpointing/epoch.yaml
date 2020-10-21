@@ -1,0 +1,4 @@
+checkpoint_monitor: "info/epoch"
+checkpoint_mode: "max"
+checkpoint_save_top_k: 5
+checkpoint_verbose: True
