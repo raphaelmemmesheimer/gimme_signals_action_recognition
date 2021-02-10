@@ -249,16 +249,16 @@ class ClassificationLightningModule(pl.LightningModule):
         print("Trainset: ",len(trainset), "Testset: ",len(testset))
         
         self.classes = testset.classes
-        train_percentage = 0.8
-        train_items = int(train_percentage*len(trainset))
-        trainset, valset = torch.utils.data.random_split(trainset, [train_items, len(trainset)-train_items])
+        #train_percentage = 0.8
+        #train_items = int(train_percentage*len(trainset))
+        #trainset, valset = torch.utils.data.random_split(trainset, [train_items, len(trainset)-train_items])
         
         trainloader = torch.utils.data.DataLoader(trainset, 
                                                   shuffle=True, 
                                                   batch_size=self.batch_size,
                                                   num_workers=4)
 
-        valloader = torch.utils.data.DataLoader(valset, 
+        valloader = torch.utils.data.DataLoader(testset, 
                                                 shuffle=False, 
                                                 batch_size=self.batch_size,
                                                 num_workers=4)
@@ -309,7 +309,7 @@ class ClassificationLightningModule(pl.LightningModule):
         loss, acc1, acc2, acc5, tensorboard_logs = self.get_step_metrics(y, y_hat, "val")
         if batch_idx == 0:
             self.log_images(x, "examples/validation")
-        self.val_confusion_matrix = self.update_confusion_matrix(y, y_hat, self.val_confusion_matrix)
+        #self.val_confusion_matrix = self.update_confusion_matrix(y, y_hat, self.val_confusion_matrix)
     
         return {'val_loss': loss, "val_acc": torch.tensor(acc1),  
                 'log': tensorboard_logs} 
@@ -493,7 +493,7 @@ class ClassificationLightningModule(pl.LightningModule):
             batch_size = target.size(0)
             res = []
             for k in topk:
-                correct_k = correct[:k].view(-1).float().sum(0, keepdim=True)
+                correct_k = correct[:k].reshape(-1).float().sum(0, keepdim=True)
                 res.append(correct_k.mul_(100.0 / batch_size))
             return res
 
