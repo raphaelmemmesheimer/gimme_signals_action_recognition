@@ -401,7 +401,7 @@ color_map = helpers.skeleton_helpers.generate_color_map(50*3)
 
 
 
-def extract_ntu(input_dataset_folder, dataset_folder, max_show=99999999, attention=False, overwrite_if_existing=True, approach="mpl", prefix="", scale_x = 1, scale_y =1, scale_amp=20):
+def extract_ntu(input_dataset_folder, dataset_folder, split, max_show=99999999, attention=False, overwrite_if_existing=True, approach="mpl", prefix="", scale_x = 1, scale_y =1, scale_amp=20):
     train_subjects = helpers.skeleton_helpers.get_ntu_cross_subject_train_subjects()
     files = helpers.skeleton_helpers.get_sorted_files_in_folder(input_dataset_folder)
 
@@ -422,7 +422,7 @@ def extract_ntu(input_dataset_folder, dataset_folder, max_show=99999999, attenti
                 class_name = filename[16:16+4]
 
                 # sort into respective folder
-                set_cat = helpers.skeleton_helpers.get_test_train_ntu(filename, "cross_subject")
+                set_cat = helpers.skeleton_helpers.get_test_train_ntu(filename, split)
                 dest_folder = dataset_folder+experiment_string+"/"+set_cat+"/"+class_name
                 helpers.skeleton_helpers.mk_dest_dir(dest_folder)
 
