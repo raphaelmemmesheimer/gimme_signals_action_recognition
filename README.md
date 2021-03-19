@@ -22,12 +22,16 @@ In case the video does not play you can download it [here](https://userpages.uni
 
 
 ```
-@article{memmesheimer2020gimme,
-  title={Gimme Signals: Discriminative signal encoding for multimodal activity recognition},
-  author={Memmesheimer, Raphael and Theisen, Nick and Paulus, Dietrich},
-  journal={arXiv preprint arXiv:2003.06156},
-  year={2020}
-}
+@inproceedings{Memmesheimer2020GSD, 
+   author = {Memmesheimer, Raphael and Theisen, Nick and Paulus, Dietrich}, 
+   title = {Gimme Signals: Discriminative signal encoding for multimodal activity recognition}, 
+   year = {2020}, 
+   booktitle = {2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+   address = {Las Vegas, NV, USA}, 
+   publisher = {IEEE}, 
+   doi = {10.1109/IROS45743.2020.9341699}, 
+   isbn = {978-1-7281-6213-3}, 
+ } 
 ```
 
 ## Requirements
