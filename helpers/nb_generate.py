@@ -78,15 +78,6 @@ def plot_skeleton_data(skeleton_data, size=5, offset=False, approach_id=1, alpha
     fig.tight_layout(pad=0)
     # To remove the huge white borders
     ax.margins(0)
-#     ax = plt.figure(frameon=False)
-#     ax.spines['top'].set_visible(False)
-#     ax.spines['right'].set_visible(False)
-#     ax.spines['bottom'].set_linewidth(0.0)
-#     ax.spines['left'].set_linewidth(0.0)
-#     plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1)
-
-
-
     if approach_id == 3:
         skeleton_data = np.sort(skeleton_data, axis=0)
 
@@ -166,8 +157,6 @@ def plot_skeleton_data(skeleton_data, size=5, offset=False, approach_id=1, alpha
             for i in range(0,n-s,s):
 
                 alpha = min(alpha+ (s / n), 1.0)
-#                 print(alpha)
-
                 ax.plot(range(i,i+s+1), of1+joint_data[0][i:i+s+1],  "-", linewidth=size, c=color_map[joint_index], alpha=alpha);
                 ax.plot(range(i,i+s+1), of2+joint_data[1][i:i+s+1], "-", linewidth=size, c=color_map[color_offset+joint_index], alpha=alpha);
                 ax.plot(range(i,i+s+1), of3+joint_data[2][i:i+s+1], "-", linewidth=size, c=color_map[2*color_offset+joint_index], alpha=alpha);
@@ -178,8 +167,6 @@ def plot_skeleton_data(skeleton_data, size=5, offset=False, approach_id=1, alpha
                 ax.plot(range(len(joint_data[2])), of3+joint_data[2], "-", linewidth=size, c=color_map[2*color_offset+joint_index], alpha=alpha);
             except Exception as e:
                 print(e)
-#         ax.view_init(0, 0)
-
     return fig
 
 def get_utd_mhad_dataset(modality=None):
@@ -207,12 +194,10 @@ def extract_utdmhad_skeleton(dataset_name, input_dataset_folder, dataset_folder,
     experiment_str = ""
     for i, file in tqdm(enumerate(files), total=len(files)):
         filename = os.fsdecode(file)
-#         print(str(i)+"/"+str(len(files)), filename[:3])
         if filename.endswith(".mat"):# and filename[:3] == "a1_":
             data = sio.loadmat(input_dataset_folder+"/"+filename)
 
             skeleton_data = data["d_skel"]
-#             print("Selected"+str(len(files)), filename, skeleton_data.shape)
             if i > max_show:
                 break
             class_name = filename[:filename.find("_")]
@@ -228,18 +213,7 @@ def extract_utdmhad_skeleton(dataset_name, input_dataset_folder, dataset_folder,
             dest_folder = dataset_folder+experiment_str+"/"+set_cat+"/"+class_name
             if not os.path.exists(dest_folder):
                 os.makedirs(dest_folder, exist_ok=True)
-#             print(class_name, subject, set_cat)
-
-    #         jrp = JointRecurrencePlot(threshold='point', percentage=30)
-    #         X_jrp = jrp.fit_transform(skeleton_data)
-    #         plt.figure(figsize=(6, 6))
-    #         plt.axis("off")
-    #         plt.imshow(X_jrp[0], cmap='binary', origin='lower')
-    #         plt.savefig(dest_folder+"/"+filename+".png")
-    #         plt.close()
-    #         fig.canvas.print_png(dest_folder+"/"+filename+"___canvas.png")
             dest_filename = dest_folder+"/"+filename+".png"
-#             print(dest_filename)
 
             fig.savefig(dest_filename)
             if save_svg:
@@ -259,10 +233,7 @@ def extract_utdmhad_skeleton(dataset_name, input_dataset_folder, dataset_folder,
                 a.save_as_mp4(dest_filename_video)
             if max_show > 26:
                 plt.close()
-        #         pickle.dump(fig, open(class_name+"/"+filename+".pkl", 'wb'))
-    #
     return experiment_str
-    # fig.show()
 
 def extract_utdmhad_imu(dataset_name, input_dataset_folder, dataset_folder, color_map, max_show=999999, save_svg=False, animate=False):
 
@@ -270,8 +241,6 @@ def extract_utdmhad_imu(dataset_name, input_dataset_folder, dataset_folder, colo
 
 
     files = helpers.skeleton_helpers.get_sorted_files_in_folder(input_dataset_folder)
-#     directory = os.fsencode(dataset_folder)
-#     files = sorted(os.listdir(directory))
     for i, file in tqdm(enumerate(files), total=len(files)):
         filename = os.fsdecode(file)
         print(str(i)+"/"+str(len(files)), filename[:3])
@@ -336,13 +305,10 @@ def extract_utdmhad_fused(input_dataset_folder_skeleton, input_dataset_folder_in
             print(skeleton_data.shape, inertial_data.shape, len(skeleton_data))
 
 
-#             samples = []
             samples = np.sort(np.random.randint(0, len(inertial_data), len(skeleton_data)))
             print(samples)
-#             sampled_inerial = np.delete(inertial_data, samples, axis=0)
             sampled_inerial = np.take(inertial_data, samples, axis=0)
             sampled_inerial = np.repeat(sampled_inerial[:, :, :], 3, axis=1)
-#             sampled_inerial = np.repeat(sampled_inerial[:, :, :], 3, axis=2)
             print(skeleton_data.shape, inertial_data.shape, sampled_inerial.shape, len(skeleton_data))
 
 
@@ -363,15 +329,6 @@ def extract_utdmhad_fused(input_dataset_folder_skeleton, input_dataset_folder_in
             if not os.path.exists(dest_folder):
                 os.makedirs(dest_folder, exist_ok=True)
             print(class_name, subject, set_cat)
-
-    #         jrp = JointRecurrencePlot(threshold='point', percentage=30)
-    #         X_jrp = jrp.fit_transform(skeleton_data)
-    #         plt.figure(figsize=(6, 6))
-    #         plt.axis("off")
-    #         plt.imshow(X_jrp[0], cmap='binary', origin='lower')
-    #         plt.savefig(dest_folder+"/"+filename+".png")
-    #         plt.close()
-    #         fig.canvas.print_png(dest_folder+"/"+filename+"___canvas.png")
             dest_filename = dest_folder+"/"+filename+".png"
             print(dest_filename)
             fig.savefig(dest_filename)
@@ -384,9 +341,6 @@ def extract_utdmhad_fused(input_dataset_folder_skeleton, input_dataset_folder_in
                 fig.savefig(dest_filename_svg)
             if max_show > 26:
                 plt.close()
-        #         pickle.dump(fig, open(class_name+"/"+filename+".pkl", 'wb'))
-    #
-    # fig.show()
 
 from simitate import trajectory_loader
 from simitate_dataset.simitate_dataset import SimitateTrajectoriesDataset
@@ -453,9 +407,7 @@ def extract_ntu(input_dataset_folder, dataset_folder, max_show=99999999, attenti
 
     for i, file in tqdm(enumerate(files), total=len(files)):
         filename = os.fsdecode(file)
-#         print(str(i)+"/"+str(len(files)), filename[:1], filename)
         if filename.endswith(".skeleton"):
-    #         try:
                 skeletons = helpers.skeleton_helpers.load_skeletons(input_dataset_folder+"/"+filename)
                 if len(skeletons) == 0:
                     print("Warining: No skeletons found")
@@ -464,10 +416,8 @@ def extract_ntu(input_dataset_folder, dataset_folder, max_show=99999999, attenti
                     skeleton_data = np.concatenate((skeletons[0], skeletons[1]), axis=0)
                 else:
                     skeleton_data = skeletons[0]
-#                 print(skeleton_data.shape)
                 experiment_string = get_experiment_string(skeleton_data, offset=skeleton_data.var(), approach_id=10, size=1, attention=attention, filter_percentage=0.0)
 
-#                 subject = filename[:4]
                 subject = filename[8:12]
                 class_name = filename[16:16+4]
 
@@ -476,11 +426,8 @@ def extract_ntu(input_dataset_folder, dataset_folder, max_show=99999999, attenti
                 dest_folder = dataset_folder+experiment_string+"/"+set_cat+"/"+class_name
                 helpers.skeleton_helpers.mk_dest_dir(dest_folder)
 
-#                 print(class_name, subject,set_cat, dest_folder)
                 dest_filename = dest_folder+"/"+str(prefix)+filename+".png"
                 if not os.path.isfile(dest_filename) or overwrite_if_existing:
-#                     print(skeleton_data.shape)
-
                     if approach == "cv":
                         fig = plot_skeleton_data_cv(skeleton_data, offset=skeleton_data.var(), approach_id=10, size=1, attention=attention, filter_percentage=0.3, scale_x = scale_x, scale_y = scale_y, scale_amp=scale_amp)
                         cv2.imwrite(dest_filename, fig)
@@ -490,23 +437,15 @@ def extract_ntu(input_dataset_folder, dataset_folder, max_show=99999999, attenti
                         fig.savefig(dest_filename)
                 else:
                     print("File existing, skipping to save time, set overwrite_if_existing to True if you want to regenerate")
-#                 fig.savefig("skeleton_representation.svg")
-    #             fig.savefig(filename+".png")
                 if max_show > 60:
                     plt.close()
-    #         except Exception as e:
-    #             print("Error", e)
         if i > max_show:
             break
 
 def plot_skeleton_data_cv(skeleton_data, size=5, offset=False, approach_id=1, alpha=0.2, attention=False, filter_percentage=0.5, scale_x = 1, scale_y =1, scale_amp=20):
-#     scale_x = 2
-#     scale_y = 2
-#     scale_amp = 30
     image = np.zeros((skeleton_data.shape[0]*10*scale_x,skeleton_data.shape[2]*scale_y,3), np.uint8)
     if attention:
         skeleton_data = filter_attention(skeleton_data, filter_percentage)
-#         print("filtered", skeleton_data.shape)
     sum_max = 0
     for joint_index, joint in enumerate(skeleton_data):
         for axis_index, axis in enumerate(joint):
@@ -523,16 +462,12 @@ def plot_skeleton_data_cv(skeleton_data, size=5, offset=False, approach_id=1, al
                     off_x = (joint_index*5)
                     val = int((axis[i]*scale_amp)+off_x)
                     val1 = int((axis[i+1]* scale_amp)+off_x)
-    #                 print(val, val1, color_map[joint_index])
                     color = color_map[joint_index*3]*255
                     color[:] *= min(alpha + (i / len(axis)), 1.0)
-#                     print(color)
 
                     cv2.line(image, (i*scale_y, val*scale_x), ((i+1)*scale_y, val1*scale_x), color , 1)
-#                     cv2.circle(image, (i, val), 1, color, thickness=1, lineType=8, shift=0)
-#                     image[val,i] = color[:3]
                 except Exception as e:
-#                     print(e)
+                    print(e)
                     continue
 
     return image
@@ -546,10 +481,6 @@ def get_aril_dataset():
     test_split = data_test["test_data"]
     train_classes = data['train_activity_label']
     test_classes = data_test['test_activity_label']
-
-#     train_split.shape, test_split.shape
-#     train_classes.shape, test_classes.shape
-
     color_map = color_map = helpers.skeleton_helpers.generate_color_map(52) #  52 bands
     return dataset_name, dataset_folder, train_split, train_classes, test_classes, test_split, color_map
 
@@ -566,7 +497,6 @@ def plot_wifi_signal(data, classes, dest, max_show=-1, show=False, save=True ,sa
         # To remove the huge white borders
         ax.margins(0)
         label = classes[i][0]
-#         print(label[0])
         for j in range(len(wifi_signal)):
             ax.plot(range(len(wifi_signal[j])), wifi_signal[j], "-", linewidth=1, c=color_map[j]);
 
@@ -574,7 +504,6 @@ def plot_wifi_signal(data, classes, dest, max_show=-1, show=False, save=True ,sa
 
         if save:
             dest_folder = str(dest)+"/"+str(label)
-#             print(dest_folder)
             os.makedirs(dest_folder, exist_ok=True)
             fig.savefig(dest_folder+"/"+str(i).zfill(5)+".png")
             if save_svg:
@@ -585,7 +514,6 @@ def plot_wifi_signal(data, classes, dest, max_show=-1, show=False, save=True ,sa
         if not show:
             plt.close()
 
-# print(skeleton_data.shape, len(skeleton_data))
 def animate_all_ARIL(data):
     for i, signals in enumerate(data):
         signals = data[i]
@@ -603,25 +531,21 @@ def generate(mappings, max_show = 10, overwrite_if_existing=False, folder_per_cl
     image_labels = []
     for source_folder, dest_folder in mappings.items():
         try:
-#             print(source_folder, dest_folder)
             files = sorted(os.listdir(source_folder))
             if not folder_per_class:
                 os.makedirs(dest_folder, exist_ok=True)
             else:
                 basename = os.path.basename(dest_folder)
-#           print(basename)
             for file in files:
                 try:
 
                     # in scene 3 classes are extra
                     label = file[:-4] + ("_desk" if basename.find("scene3") > -1 else "")
-#                     basename = ""
                     if folder_per_class:
                         # restructure the folder structure such that it's working with the pytorch imagedataloader
 
                         dest_folder = os.path.dirname(dest_folder)+"/"+label
                         os.makedirs(dest_folder, exist_ok=True)
-#                         print(dest_folder)
 
                     dest_file = dest_folder+"/"+basename+file[:-4]+".png"
 
@@ -630,23 +554,13 @@ def generate(mappings, max_show = 10, overwrite_if_existing=False, folder_per_cl
                     if dest_file.find("scene3") > -1:
                         label +="_desk"
                     image_labels.append(label)
-#                     print(dest_file, label)
 
                     if overwrite_if_existing:
                         file_path = source_folder+"/"+file
                         df = pd.read_csv(file_path, header=None)
                         data = df.to_numpy()
                         data = data[:,1:4].transpose()
-#                         return data
                         fig = plot_skeleton_data(data)
-#                         fig = plt.figure(figsize=(5,5))
-                        #   fig.title(filename)
-#                         ax = fig.add_subplot(frameon=False)
-#                         ax.axis("off")
-            #             print(file_path)
-
-#                         for signal in data.transpose()[1:]:
-#                             plt.plot(signal,alpha=0.5)
 
                         print(dest_file)
                         plt.savefig(dest_file[:-4]+".png")
