@@ -44,8 +44,9 @@ In case the video does not play you can download it [here](https://userpages.uni
 Example code to generate representations for the NTU dataset:
 
 ```
-python generate_representation_ntu.py <ntu_skeleton_dir> $DATASET_FOLDER
+python generate_representation_ntu.py <ntu_skeleton_dir> $DATASET_FOLDER <split>
 ```
+where split is either "cross_subject", "cross_setup", "one_shot"
 
 Representations must be placed inside a `$DATASET_FOLDER` that an environment variable points to.
 
