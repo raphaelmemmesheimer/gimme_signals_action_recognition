@@ -37,7 +37,11 @@ In case the video does not play you can download it [here](https://userpages.uni
 
 ## Generate Representation
 
-### TODO: add code for representation generation
+Example code to generate representations for the NTU dataset:
+
+```
+python generate_representation_ntu.py <ntu_skeleton_dir> $DATASET_FOLDER
+```
 
 Representations must be placed inside a `$DATASET_FOLDER` that an environment variable points to.
 
