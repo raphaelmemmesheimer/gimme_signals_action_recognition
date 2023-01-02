@@ -39,6 +39,12 @@ In case the video does not play you can download it [here](https://userpages.uni
 * pytorch, torchvision, pytorch-lightning, hydra-core
 * `pip intall -r requirements.txt`
 
+The following command installs supported torch and torhvision versions in case you get an CUDA Kernel issue:
+
+```
+pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+```
+
 ## Generate Representation
 
 Example code to generate representations for the NTU dataset:
